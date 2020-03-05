@@ -1,9 +1,11 @@
 const products = document.querySelectorAll(".mini-cart-product")
 let total;
 const messageDiv = document.createElement("div")
-const numItems = products.length
+let numItems;
 
 total = document.querySelector(".order-value") ? document.querySelector(".order-value").innerText : null
+numItems = document.querySelector(".total-items") ? parseInt(document.querySelector(".total-items").innerText.split(" ")[0]) : null
+
 messageDiv.className="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front modal-body"
 messageDiv.id = "modal"
 messageDiv.style.display = "none"
