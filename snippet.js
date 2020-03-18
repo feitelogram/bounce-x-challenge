@@ -2,6 +2,7 @@
 const products = document.querySelectorAll(".mini-cart-product")
 let total;
 let numItems;
+// let lastScrollTop = 0.9
 
 //creating the div that will house all the info for our modal
 const messageDiv = document.createElement("div")
@@ -125,8 +126,9 @@ renderEverything()
 
 
 //jQuery to handle the scroll event to the bottom of the page
+
   $(window).scroll(() => {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {  
+    if($(window).scrollTop() + $(window).height() >= $(document).height()) {  
         $( () => {
 
           //on the scroll event, change our div to make things look ordered and add a close button
@@ -134,7 +136,7 @@ renderEverything()
             $( "#modal" ).dialog({
               //handles the CSS/background effect for the modal
               modal: true,
-              closeText: "X",
+              closeText: "Close"
             });
 
             
